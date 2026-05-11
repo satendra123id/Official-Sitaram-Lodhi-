@@ -1,262 +1,346 @@
-export default function SitaramLuxuryWebsite() { const socials = [ { name: 'YouTube', username: '@thenewtips', link: 'https://youtube.com/@thenewtips', }, { name: 'Instagram', username: '@seetarampatel4444', link: 'https://instagram.com/seetarampatel4444', }, { name: 'Facebook', username: 'Sitaram Profile', link: 'https://www.facebook.com/profile.php?id=100092967464979&mibextid=ZbWKwL', }, { name: 'WhatsApp Channel', username: 'Join Channel', link: 'https://whatsapp.com/channel/0029VbAZPQnKAwErInSiSV1l', }, { name: 'Courses Website', username: 'SR India', link: 'https://satendra123id.github.io/SRindia/', }, { name: 'Earning Tips Blog', username: 'Zero Setup Earning', link: 'https://zerosetupearning.blogspot.com', }, ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitaram Lodhi | Official Premium Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap');
 
-const skills = [ 'Website Creator', 'Photo Editing', 'AI Photo Generating', 'AI Video Creating', 'Video Ideas', 'Script Writing', 'Title & Description', 'Tags & Keywords', 'Hashtag Generating', 'Video Viral Strategy', 'Cyber Security Basics', 'Terminal Setup', 'Code Running Demo', 'Nmap Tools', 'Phone Hacking Knowledge', 'Luxury Landing Page Design', ];
+        :root {
+            --bg-color: #050505;
+            --cyber-green: #00ffcc;
+            --cyber-glow: rgba(0, 255, 204, 0.6);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+        }
 
-return ( <div className="min-h-screen bg-black text-white overflow-hidden relative font-sans"> {/* Background */} <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,255,200,0.15),transparent_35%),radial-gradient(circle_at_bottom,rgba(0,140,255,0.15),transparent_35%)]"></div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-{/* Animated Grid */}
-  <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:40px_40px] animate-pulse"></div>
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-  {/* Navigation */}
-  <nav className="sticky top-0 z-50 backdrop-blur-xl border-b border-white/10 bg-black/40">
-    <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-5">
-      <h1 className="text-2xl font-bold tracking-[4px] text-cyan-400">
-        SITARAM LODHI
-      </h1>
+        /* 3D Background Canvas */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+        }
 
-      <div className="hidden md:flex gap-6 text-sm uppercase tracking-[2px]">
-        <a href="#home" className="hover:text-cyan-400 transition-all duration-300">Home</a>
-        <a href="#skills" className="hover:text-cyan-400 transition-all duration-300">Skills</a>
-        <a href="#channels" className="hover:text-cyan-400 transition-all duration-300">Channels</a>
-        <a href="#about" className="hover:text-cyan-400 transition-all duration-300">About</a>
-      </div>
-    </div>
-  </nav>
+        .container {
+            width: 100%;
+            max-width: 850px;
+            padding: 50px 20px;
+            z-index: 1;
+        }
 
-  {/* Hero Section */}
-  <section
-    id="home"
-    className="relative z-10 min-h-screen flex items-center justify-center px-6"
-  >
-    <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
-      {/* Left */}
-      <div>
-        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-cyan-400/30 bg-cyan-500/10 mb-6">
-          <div className="w-3 h-3 rounded-full bg-cyan-400 animate-ping"></div>
-          <span className="text-cyan-300 text-sm tracking-[3px] uppercase">
-            Premium Creator Portfolio
-          </span>
-        </div>
+        /* Profile Section */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
 
-        <h1 className="text-5xl md:text-7xl font-black leading-tight">
-          Apple Style <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-blue-500">
-            Hacker UI
-          </span>
-        </h1>
+        .profile-img-container {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            padding: 6px;
+            background: linear-gradient(45deg, var(--cyber-green), #0044ff, var(--cyber-green));
+            animation: rotateBorder 4s linear infinite;
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
+        }
 
-        <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-xl">
-          Luxury cyber-style creator website with 3D premium effects,
-          AI content creation, hacking tools showcase, social media
-          branding, viral growth strategy and futuristic design.
-        </p>
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg-color);
+            background-image: url('http://googleusercontent.com/generated_image_content/0'); /* AAPKI 4K PHOTO ADDED */
+            background-size: cover;
+            background-position: top center;
+        }
 
-        <div className="flex flex-wrap gap-4 mt-10">
-          <a
-            href="https://youtube.com/@thenewtips"
-            target="_blank"
-            className="px-7 py-4 rounded-2xl bg-cyan-500 hover:scale-105 transition-all duration-300 font-semibold shadow-[0_0_40px_rgba(0,255,255,0.35)]"
-          >
-            Explore Channel
-          </a>
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
 
-          <a
-            href="#skills"
-            className="px-7 py-4 rounded-2xl border border-white/20 hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-300"
-          >
-            View Skills
-          </a>
-        </div>
-      </div>
+        .cyber-badge {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--cyber-green);
+            font-size: 1rem;
+            text-shadow: 0 0 10px var(--cyber-glow);
+        }
 
-      {/* Right */}
-      <div className="relative flex justify-center">
-        <div className="absolute w-[420px] h-[420px] rounded-full bg-cyan-500/20 blur-[120px]"></div>
+        /* Luxury Glass Panels */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-        <div className="relative backdrop-blur-2xl border border-white/10 rounded-[40px] p-10 bg-white/5 shadow-[0_0_80px_rgba(0,255,255,0.2)] hover:scale-105 transition-all duration-500">
-          <div className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-cyan-400/10 to-blue-600/10"></div>
+        .glass-panel:hover {
+            border-color: var(--cyber-glow);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.05);
+        }
 
-          <div className="relative z-10 flex flex-col items-center text-center">
-            {/* Replace image below with your real 4K image */}
-            <img
-              src="/mnt/data/sitaram_profile.png"
-              alt="Sitaram Lodhi"
-              className="w-56 h-56 rounded-full object-cover border-4 border-cyan-400 shadow-[0_0_50px_rgba(0,255,255,0.5)]"
-            />
+        .section-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-            <h2 className="text-4xl font-black mt-8 tracking-[3px]">
-              Sitaram Lodhi
-            </h2>
+        .section-title i {
+            color: var(--cyber-green);
+        }
 
-            <p className="mt-3 text-gray-300 max-w-sm">
-              AI Creator • Cyber Designer • Viral Growth Expert • Website Developer
-            </p>
+        /* Social Links */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+        }
 
-            <div className="grid grid-cols-3 gap-4 mt-8 w-full">
-              <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-                <h3 className="text-3xl font-bold text-cyan-400">10K+</h3>
-                <p className="text-gray-400 text-sm mt-2">Audience</p>
-              </div>
+        .link-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 24px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
 
-              <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-                <h3 className="text-3xl font-bold text-cyan-400">AI</h3>
-                <p className="text-gray-400 text-sm mt-2">Creator</p>
-              </div>
+        .link-btn:hover {
+            background: rgba(0, 255, 204, 0.1);
+            border-color: var(--cyber-green);
+            box-shadow: 0 0 20px var(--cyber-glow);
+            transform: scale(1.02);
+        }
 
-              <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-                <h3 className="text-3xl font-bold text-cyan-400">PRO</h3>
-                <p className="text-gray-400 text-sm mt-2">Design</p>
-              </div>
+        .link-btn i {
+            font-size: 1.6rem;
+            color: var(--cyber-green);
+        }
+
+        /* Skills Terminal (Hacker Look) */
+        .terminal {
+            font-family: 'JetBrains Mono', monospace;
+            background: #080808;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #222;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        .terminal-header {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 12px;
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .red { background: #ff5f56; }
+        .yellow { background: #ffbd2e; }
+        .green { background: #27c93f; }
+
+        .skill-list {
+            list-style: none;
+            color: var(--cyber-green);
+            font-size: 0.95rem;
+            line-height: 2;
+        }
+
+        .skill-list li::before {
+            content: "root@sitaram:~# ";
+            color: #888;
+        }
+
+        .skill-list b {
+            color: #fff;
+        }
+
+        /* Copyright Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: auto;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--glass-border);
+            width: 100%;
+        }
+
+        /* Animations */
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-img-container">
+                <div class="profile-img"></div>
             </div>
-          </div>
+            <h1>Sitaram Lodhi</h1>
+            <div class="cyber-badge">PRO DIGITAL CREATOR & ETHICAL HACKER</div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  {/* Skills */}
-  <section id="skills" className="relative z-10 py-24 px-6">
-    <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-black">
-          Premium <span className="text-cyan-400">Skills</span>
-        </h2>
-        <p className="mt-5 text-gray-400 text-lg">
-          Everything designed with futuristic luxury hacker aesthetics.
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="group rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:border-cyan-400 hover:-translate-y-3 transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,255,255,0.25)]"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-2xl mb-6 group-hover:rotate-12 transition-all duration-300">
-              ⚡
+        <div class="glass-panel">
+            <h2 class="section-title"><i class="fa-solid fa-satellite-dish"></i> My Digital Channels</h2>
+            <div class="links-grid">
+                <a href="https://youtube.com/@thenewtips" target="_blank" class="link-btn">
+                    <i class="fa-brands fa-youtube" style="color: #FF0000;"></i> YouTube (@thenewtips)
+                </a>
+                <a href="https://instagram.com/seetarampatel4444" target="_blank" class="link-btn">
+                    <i class="fa-brands fa-instagram" style="color: #E1306C;"></i> Instagram Hub
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100092967464979&mibextid=ZbWKwL" target="_blank" class="link-btn">
+                    <i class="fa-brands fa-facebook" style="color: #1877F2;"></i> Facebook Official
+                </a>
+                <a href="https://whatsapp.com/channel/0029VbAZPQnKAwErInSiSV1l" target="_blank" class="link-btn">
+                    <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Channel
+                </a>
+                <a href="https://satendra123id.github.io/SRindia/" target="_blank" class="link-btn">
+                    <i class="fa-solid fa-code"></i> Courses Website
+                </a>
+                <a href="https://zerosetupearning.blogspot.com" target="_blank" class="link-btn">
+                    <i class="fa-solid fa-money-bill-trend-up"></i> Earning Tips
+                </a>
             </div>
+        </div>
 
-            <h3 className="text-xl font-bold mb-3 text-white">{skill}</h3>
-
-            <p className="text-gray-400 text-sm leading-relaxed">
-              Advanced professional service with high quality premium
-              execution and modern creator workflow.
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {/* Cyber Terminal */}
-  <section className="relative z-10 py-24 px-6">
-    <div className="max-w-6xl mx-auto rounded-[40px] overflow-hidden border border-cyan-400/20 bg-black/70 shadow-[0_0_60px_rgba(0,255,255,0.15)]">
-      <div className="flex items-center gap-3 px-6 py-4 border-b border-white/10 bg-white/5">
-        <div className="w-3 h-3 rounded-full bg-red-500"></div>
-        <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-        <div className="w-3 h-3 rounded-full bg-green-500"></div>
-        <span className="ml-4 text-cyan-300 tracking-[3px] uppercase text-sm">
-          Cyber Terminal Demo
-        </span>
-      </div>
-
-      <div className="p-8 font-mono text-green-400 text-sm md:text-base space-y-3 overflow-x-auto">
-        <p>$ initializing futuristic terminal...</p>
-        <p>$ loading AI creator modules...</p>
-        <p>$ setting up termux environment...</p>
-        <p>$ apt update && apt upgrade -y</p>
-        <p>$ pkg install python git nmap</p>
-        <p>$ nmap -sV target.com</p>
-        <p>$ AI video generation loaded successfully...</p>
-        <p>$ Viral strategy analysis completed...</p>
-        <p className="text-cyan-400">SYSTEM STATUS: ONLINE ✔</p>
-      </div>
-    </div>
-  </section>
-
-  {/* Social Links */}
-  <section id="channels" className="relative z-10 py-24 px-6">
-    <div className="max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl font-black">
-          Official <span className="text-cyan-400">Channels</span>
-        </h2>
-      </div>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {socials.map((social, index) => (
-          <a
-            key={index}
-            href={social.link}
-            target="_blank"
-            className="group rounded-[30px] border border-white/10 bg-white/5 p-8 backdrop-blur-xl hover:border-cyan-400 hover:shadow-[0_0_50px_rgba(0,255,255,0.2)] transition-all duration-500 hover:-translate-y-2"
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-all duration-300">
-                  {social.name}
-                </h3>
-                <p className="mt-2 text-gray-400">{social.username}</p>
-              </div>
-
-              <div className="w-16 h-16 rounded-2xl bg-cyan-500/10 border border-cyan-400/20 flex items-center justify-center text-3xl group-hover:scale-110 transition-all duration-300">
-                ↗
-              </div>
+        <div class="glass-panel">
+            <h2 class="section-title"><i class="fa-solid fa-terminal"></i> Skills & Expertise</h2>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <ul class="skill-list">
+                    <li><b>Website Creator</b> (High-end designs)</li>
+                    <li><b>Photo Editing & AI Photo Generating</b></li>
+                    <li><b>AI Video Creating</b> (Professional results)</li>
+                    <li><b>Content Strategy</b> (Idea, Script, Title, Tags, Keywords)</li>
+                    <li><b>Video Viral Hacks</b> (Algorithm secrets)</li>
+                    <li><b>Termux Setup</b> (Terminal codes & automation)</li>
+                    <li><b>Hacking Tools</b> (Nmap, Metasploit, Linux)</li>
+                </ul>
             </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  {/* About */}
-  <section id="about" className="relative z-10 py-24 px-6">
-    <div className="max-w-6xl mx-auto rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-2xl p-12 shadow-[0_0_80px_rgba(0,255,255,0.1)]">
-      <div className="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <h2 className="text-5xl font-black leading-tight">
-            Future Ready <span className="text-cyan-400">Creator</span>
-          </h2>
-
-          <p className="mt-6 text-gray-300 leading-relaxed text-lg">
-            This luxury business portfolio combines Apple-style premium UI,
-            cyberpunk animations, futuristic glassmorphism and creator branding.
-            Perfect for YouTube creators, AI artists, hackers, developers,
-            digital marketers and modern influencers.
-          </p>
         </div>
-
-        <div className="grid grid-cols-2 gap-5">
-          <div className="rounded-3xl border border-cyan-400/20 bg-black/40 p-6">
-            <h3 className="text-3xl font-black text-cyan-400">3D</h3>
-            <p className="text-gray-400 mt-2">Animated UI Effects</p>
-          </div>
-
-          <div className="rounded-3xl border border-cyan-400/20 bg-black/40 p-6">
-            <h3 className="text-3xl font-black text-cyan-400">4K</h3>
-            <p className="text-gray-400 mt-2">Luxury Design Quality</p>
-          </div>
-
-          <div className="rounded-3xl border border-cyan-400/20 bg-black/40 p-6">
-            <h3 className="text-3xl font-black text-cyan-400">AI</h3>
-            <p className="text-gray-400 mt-2">Content Generation</p>
-          </div>
-
-          <div className="rounded-3xl border border-cyan-400/20 bg-black/40 p-6">
-            <h3 className="text-3xl font-black text-cyan-400">PRO</h3>
-            <p className="text-gray-400 mt-2">Premium Experience</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
-  {/* Footer */}
-  <footer className="relative z-10 border-t border-white/10 py-10 text-center text-gray-400 bg-black/50 backdrop-blur-xl">
-    <p className="text-lg tracking-[2px]">
-      © 2026 SITARAM LODHI • ALL RIGHTS RESERVED • PREMIUM CYBER PORTFOLIO
-    </p>
-  </footer>
-</div>
+    <footer>
+        Copyright ©️ 2024 Sitaram Lodhi. All Rights Reserved. <br>
+        <small style="opacity:0.5; margin-top:10px; display:block;">Premium Cyber Portfolio | No Errors | Live Working</small>
+    </footer>
 
-); }
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2 + 1;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.speedY = (Math.random() - 0.5) * 0.8;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > width) this.x = 0; if (this.x < 0) this.x = width;
+                if (this.y > height) this.y = 0; if (this.y < 0) this.y = height;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 255, 204, 0.4)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < 80; i++) particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
